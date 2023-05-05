@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Cookies Login",
+  "description": "使用 Cookies 登陆账号。",
+  "author": "Raz1ner",
+  "version": "1.0.0",
+  "icons": {
+    "128": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "tabs",
+    "cookies"
+  ],
+  "host_permissions": ["<all_urls>"]
+}
