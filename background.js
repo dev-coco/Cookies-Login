@@ -13,7 +13,7 @@ async function init () {
   const url = json.url
   if (url === 'none') return
   const arr = []
-  const cookieParams = formatCookie(json.cookie).split(';')
+  const cookieParams = formatCookie(json.cookie).split('&')
   for (const param of cookieParams) {
     const info = param.split('=')
     arr.push({
@@ -49,15 +49,16 @@ const accountState = () => {
 
 // 格式化 cookie
 function formatCookie (str) {
-  if (/=|;/g.test(str)) {
-    return str.replace(/ /g, '')
+  if (/=/g.test(str)) {
+    return str
   } else {
-    const nameList = str.match(/(?<="name": ").*?(?=")/g)
-    const valueList = str.match(/(?<="value": ").*?(?=")/g)
+    const nameList = str.match(/(?<="name":").*?(?=")/g)
+    const valueList = str.match(/(?<="value":").*?(?=")/g)
     const arr = []
     for (let i = 0; i < nameList.length; i++) {
       arr.push(`${nameList[i]}=${valueList[i]}`)
     }
-    return arr.join(';')
+    return arr.join('&')
   }
 }
+
