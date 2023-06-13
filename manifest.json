@@ -3,7 +3,7 @@
   "name": "Cookies Login",
   "description": "使用 Cookies 登陆账号。",
   "author": "Raz1ner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "icons": {
     "128": "icon.png"
   },
